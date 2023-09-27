@@ -54,18 +54,9 @@ age <- c (34, 28, 22, 36, 27, 18, 52, 39, 42, 29,
     one_oneT <- seq(1,1000)
     one_oneT
 #a How many data points from 8.1 to 8.4?
-  #1a data points
-    data_pts1 <- length(uno_syen)
-    data_pts1
-  #2a data points 
-    data_pts2 <- length(twenty_sixty)
-    data_pts2
-  #3a data points
-    data_pts3 <- length(twentsixt_mean)
-    data_pts3
-  #4a data points
-    data_pts4 <- length(fifty1_nine1)
-    data_pts4
+  #Overall data points from 8.1 to 8.4
+    Odatapts <- length(uno_syen) + length(twenty_sixty) + length(twentsixt_mean) + length(fifty1_nine1)
+    Odatapts
   #8.5a find only maximum data points until 10
     nummax  <-seq (1,10)
     nummax2 <- max(nummax)
@@ -86,12 +77,19 @@ age <- c (34, 28, 22, 36, 27, 18, 52, 39, 42, 29,
     naturalnum2 <- c(naturalnum2)
     naturalsum <- sum(naturalnum2)
     naturalsum
-    
+      
     #11a  data points from 10 to 11
     teneleven <- length(reverse_unosyen) + length(naturalsum) * length(naturalnum2)
     teneleven
 #12 
     { x <- 0+ x + 5 + }
+    #it is error because the plus signs after the number 5 and it lacks proper context and structure.
+    #the statement should be:
+    #{
+    # x <- 0
+    # X <- x - 5
+    #}
+    }
     
 #13 set vectorname score
     score <- c(72, 86, 92, 63, 88, 89, 91, 92, 75,
