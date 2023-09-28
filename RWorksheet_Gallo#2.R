@@ -44,11 +44,41 @@
       #5b the 2nd element "-2" was changed into "0"
 #6 The following data shows the diesel fuel purchased by Mr. Cruz
       #6a Create a dat frame for month, price per liter(php) and purchase-quantity (liter).
-      dieselfuel <- data.frame(
+      diesel_fuel <- data.frame(
         Month = c("Jan","Feb","March","April","May","June"),
-        Price per liter(PhP) = c(52.50,57.25,60.00,65.00,74.25,54.00),
-        Purchase quantity = c(25,30,40,50,10,45)
+        Price_per_liter = c(52.50,57.25,60.00,65.00,74.25,54.00),
+        Purchase_quantity = c(25,30,40,50,10,45)
       )
-      dieselfuel
-      
+      diesel_fuel
+      #6b 
+      ave_fuel_expd <- weighted.mean(diesel_fuel$Price_per_liter,diesel_fuel$Purchase_quantity)
+      ave_fuel_expd
+#7 
+      #7b and c create data for data set
+   
+     data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers),
+            sd(rivers), min(rivers), max(rivers))
+
+#8  
+    #8a
+    forbesranking <- data.frame(
+    powerranking = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25),
+    celebrityName = c("Tom Cruise","Rolling Stones","Oprah Winfrey","U2","Tiger Woods","Steven Spielberg","Howard Stern","50 Cent","Cast of the Sopranos","Dan Brown","Bruce Springsteen","Donald Trump","Muhammad Ali","Paul McCartney","George Lucas","Elton John","David Letterman","Phil Mickelson","J.K Rowling","Bradd Pitt","Peter Jackson","Dr. Phil McGraw","Jay Lenon","Celine Dion","Kobe Bryant"),
+    pay = c(67,90,225,110,90,332,302,41,52,88,55,44,55,40,233,34,40,47,75,25,39,45,32,40,31)                                                 
+    )
+    forbesranking
+    #8b
+    powerranking [19] <- 15
+    newPower_Ranking <- powerranking
+    newPower_Ranking 
     
+    pay[19] <- 90
+    newPay <- pay
+    newPay
+    #8c Create an Excel file
+    
+    write.csv(newPower_Ranking,file = "Power Ranking.csv",row.names = TRUE)
+    csvcelebrityName <- read.csv(file="Power Ranking.csv",header =
+                                    stringAsFactors = F, sep = ',')
+    
+    csvcelebrityName                                          
