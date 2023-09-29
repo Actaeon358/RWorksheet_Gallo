@@ -59,26 +59,69 @@
      data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers),
             sd(rivers), min(rivers), max(rivers))
 
-#8  
-    #8a
-    forbesranking <- data.frame(
-    powerranking = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25),
-    celebrityName = c("Tom Cruise","Rolling Stones","Oprah Winfrey","U2","Tiger Woods","Steven Spielberg","Howard Stern","50 Cent","Cast of the Sopranos","Dan Brown","Bruce Springsteen","Donald Trump","Muhammad Ali","Paul McCartney","George Lucas","Elton John","David Letterman","Phil Mickelson","J.K Rowling","Bradd Pitt","Peter Jackson","Dr. Phil McGraw","Jay Lenon","Celine Dion","Kobe Bryant"),
-    pay = c(67,90,225,110,90,332,302,41,52,88,55,44,55,40,233,34,40,47,75,25,39,45,32,40,31)                                                 
-    )
-    forbesranking
-    #8b
-    powerranking [19] <- 15
-    newPower_Ranking <- powerranking
-    newPower_Ranking 
+#8  #8a.Create vectors according to the above table
+     ForbesRank <- data.frame(
+       PowerRanking = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25),
+       Celebrity = c("Tom Cruise","Roling Stones","Oprah Winfey","U2","Tiger Woods","Steven Spielberg","Howard Stern","50 Cent","Cast of the Supranos","Dan Brown","Bruce Springteen","Donald Trump","Muhhamad Ali","Paul McCartney","George Lucas","Elton John","David Letterman","Phil Mickelson","J.K Rowling","Bradd Pitt","Peter Jackson","Dr. Phil McGraw","Jay Lenon","Celine Dion","Kobe Bryant"),
+       Pay = c(67,90,225,110,90,332,302,41,52,88,55,44,55,40,233,34,40,47,75,25,39,45,32,40,31)
+     )
+     ForbesRank
+     View(ForbesRank)
+     #8b.Modify the power and pay of J.K. Rowling
+     PowerRanking[19] <- 15
+     newPowerRanking <- powerRanking
+     newPowerRanking 
+     
+     Pay[19] <- 90
+     newPay <- Pay
+     newPay
     
-    pay[19] <- 90
-    newPay <- pay
-    newPay
-    #8c Create an Excel file
+     #8c. Create an Excel file
+     
+     PowerRanking = read.csv('/cloud/project/PowerRanking.csv')
+     PowerRanking
+     OpenPowerRanking = PowerRanking[c(10:20),]
+     OpenPowerRanking
+     
+     
+     #8e. Its output is the 10-20 row information in the csv file
+     
+#9.
+    #9a install.package("readxl")
+    library(readxl)
+    Data <- read_excel("hotels-vienna.xlsx")
+    Data
+    View(Data)
+    #9b
+    DimensionFile <- dim(Data)
+    DimensionFile
+    #9c
+    colnames(Data)
+    Colums <- Data[,c("country", "neighbourhood", "price", "stars", "accommodation_type", "rating")]
+    View(Colums)
+    #9d
+    save(Colums, file="new.RData")
+    View(Colums)
+    #9e
+    load("new.RData")
+    Colums
     
-    write.csv(newPower_Ranking,file = "Power Ranking.csv",row.names = TRUE)
-    csvcelebrityName <- read.csv(file="Power Ranking.csv",header =
-                                    stringAsFactors = F, sep = ',')
+    Head_Six <- head(Colums)
+    Tail_Six <- tail(Colums)
+    View(Head_Six)
+    View(Tail_Six)
     
-    csvcelebrityName                                          
+    
+#10.
+    #10a.
+    Vegetables <- list("Bittergourd","Cabbage","Carrots","Raddish","Lady Finger","Squash","Garlic","Onions","Sweet Potato","Cauliflower")
+    #10b Add 2 additional vegetables after the last vegetables in the list
+    AddNewList <- append(Vegetables,c("Eggplant","Ginger"))
+    AddNewList
+    #10c Add 4 additional vegetables after index 5
+    AddIn5NewList <- append(Vegetables,c("Zucchini","Celery","Turnip","Beetroot","Spinach"),after = 5)
+    AddIn5NewList
+    #10d Remove the vegetables in index 5,10, and 15
+    RemNewList <- Vegetables [c(-5, -10, -15)]
+    RemNewList
+    
