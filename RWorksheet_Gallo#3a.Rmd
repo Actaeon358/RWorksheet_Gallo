@@ -1,0 +1,77 @@
+---
+title: "RWorksheet_Gallo#3a.Rmd"
+output: pdf_document
+date: "2023-10-04"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+#code here
+
+#1 
+LETTERS
+letters
+
+#Based on the above vector LETTERS:
+#1a Produce first 11 letters
+Letter11 <- LETTERS[1:11]
+Letter11
+#1b Contains odd numbered letters
+AllLetters <- LETTERS
+LetterOdd <- AllLetters[seq(1, length(AllLetters), by = 2)]
+LetterOdd
+
+#1c Produce Vowels
+LetterVow <- c("A","E","I","O","U")
+LetterVow
+
+#Based on the above vector letters:
+#1d Last 5 lowercase letters
+letter5 <- letters[22:26]
+letter5
+#1e Contains letters between 15 to 24
+fifteen23 <-letters[16:23]
+fifteen23
+
+#2 Create a vector(not a dataframe) with the average temperatures in April for Tuguegarao City, Manila, Iloilo City, Tacloban, Samal Island, and Davao City. The average temperatures in Celcius are 42, 39, 34, 34, 30, and 27 degrees.
+AverageTemperaturesApril = c(42, 39, 34, 34, 30, 27)
+AverageTemperaturesApril
+#2a 
+CityVec = c("Tuguegarao City","Manila","Iloilo City", "Tacloban","Samal Island","Davao City")
+CityVec
+#2b
+temp <- c(42, 39, 34, 34, 30, 27)
+temp
+#2c 
+  CityVec <- c("Tuguegarao City","Manila","Iloilo City", "Tacloban","Samal Island","Davao City")
+   temp <- c(42, 39, 34, 34, 30, 27)
+
+  CityTemp <- data.frame(City = CityVec, Temperature = temp)
+  CityTemp
+   
+  
+  
+```
