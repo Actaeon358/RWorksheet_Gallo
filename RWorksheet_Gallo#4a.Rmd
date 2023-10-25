@@ -1,0 +1,81 @@
+---
+title: "RWorksheet_Gallo#4a"
+author: "Alfe Kevin P. Gallo"
+date: "2023-10-25"
+output: pdf_document
+---
+
+```{r}
+#1
+
+Household_Data <- data.frame(
+  Shoe_size = c(6.5,9.0,8.5,8.5,10.5,7.0,9.5,9.0,13.0,7.5,10.5,8.5,12.0,10.5,13.0,11.5,8.5,5.0,10.0,6.5,7.5,8.5,10.5,8.5,10.5,11.0,9.0,13.0),
+  Height = c(66.0,68.0,64.0,65.0,70.0,64.0,70.0,71.0,72.0,64.0,74.0,67.0,71.0,71.0,77.0,72.0,59.0,62.0,72.0,66.0,64.0,67.0,73.0,69.0,72.0,70.0,69.0,70.0),
+  Gender = c("F","F","F","F","M","F","F","F","M","F","M","F","M","M","M","M","F","F","M","F","F","M","M","F","M","M","M","M")
+)
+Household_Data
+
+#1a Describe the data 
+#The males shoe size and height are bigger/higher than the females.
+
+#1b Create a subset by males and females with their corresponding shoe size and height. What its result?
+
+male_shoeH <- subset(Household_Data, Gender == "M")
+
+female_shoeH <- subset(Household_Data, Gender == "F")
+
+#1c  Find the mean of shoe size and height of the respondents. Write the R scripts and its result
+
+meanshoeSH <- mean(Household_Data$Shoe_size&Household_Data$Height)
+meanshoeSH
+
+
+#1d Is there a relationship between shoe size and height? Why?
+
+#Yes. The higher the height, the bigger the shoe size
+
+#FACTORS
+#2
+Monthsss <- c("March","April","January","November","January","September","October","September","November","August","January","November","November","February","May","August","July","December","August","August","September","November","February","April")
+factor_months_vector <- factor(Monthsss)
+factor_months_vector
+
+
+#3. Then check the summary() of the months_vector and factor_months_vector
+summary(Monthsss)
+summary(factor_months_vector)
+#The result discplayed how mony of the same months are there in the vector and also displayed its data types. Yes they are both useful.
+
+#4 Create a vector and factor for the table below.
+
+Direction <- c("East","West","North")
+Frequency <- c(1,4,3)
+
+factorDirect <- factor(Direction)
+factorFreq <- factor(Frequency)
+
+new_order_data <- factor(factorDirect,levels = c("East","West","North"))
+print(new_order_data)
+
+new_order_data2 <- factor(factorFreq,levels = c(1,4,3))
+print(new_order_data2)
+
+#5. Enter the data below in Excel with file name = import_march.csv
+#5a.
+ExcelData <- read.csv("import_march.csv")
+ExcelData
+#5b. 
+View(ExcelData)
+
+#6a
+
+inputNum <- readline(prompt="Enter number from 1 to 50:
+                     ")
+if(inputNum>50){
+  print("The number is beyond the range of 1 to 50")
+}else{
+  print("True")
+}
+#7
+```
+
