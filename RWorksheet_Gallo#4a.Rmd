@@ -76,6 +76,73 @@ if(inputNum>50){
 }else{
   print("True")
 }
-#7
+#7 Change
+
+calculateMinBills <- function() {
+  
+  bills <- c(1000, 500, 200, 100, 50)
+  
+ 
+  amount <- as.numeric(readline("Enter the price of the snack (a multiple of 50 pesos): "))
+  
+  if (is.na(amount) || amount %% 50 != 0) {
+    cat("Invalid input. Price must be a multiple of 50 pesos.\n")
+    return()
+  }
+  
+  snackprice <- amount
+  
+ 
+  bill1000 <- 0
+  bill500 <- 0
+  bill200 <- 0
+  bill100 <- 0
+  bill50 <- 0
+
+  
+  if (snackprice >= 1000) {
+    bill1000 <- snackprice %/% 1000
+    snackprice <- snackprice %% 1000
+  }
+  if (snackprice >= 500) {
+    bill500 <- snackprice %/% 500
+    snackprice <- snackprice %% 500
+  }
+  if (snackprice >= 200) {
+    bill200 <- snackprice %/% 200
+    snackprice <- snackprice %% 200
+  }
+  if (snackprice >= 100) {
+    bill100 <- snackprice %/% 100
+    snackprice <- snackprice %% 100
+  }
+  if (snackprice >= 50) {
+    bill50 <- snackprice %/% 50
+  }
+
+
+  cat("Price:", amount, "pesos\n")
+  cat("Minimum number of bills needed:\n")
+  cat("1000 pesos:", bill1000, "bills\n")
+  cat("500 pesos:", bill500, "bills\n")
+  cat("200 pesos:", bill200, "bills\n")
+  cat("100 pesos:", bill100, "bills\n")
+  cat("50 pesos:", bill50, "bills\n")
+}
+
+calculateMinBills()
+
+  
+
+#8a Data Frame 
+GradesMath <- data.frame (
+  Name = c("Annie","Thea","Steve","Hanna"),
+  Grade_1 = c(85,65,75,95),
+  Grade_2 = c(65,75,55,75),
+  Grade_3 = c(100,90,85,90)
+)
+GradesMath
+
+#8b 
 ```
 
