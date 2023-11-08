@@ -1,0 +1,70 @@
+---
+title: "RWorksheet_Gallo#4b"
+author: "Alfe Kevin P. Gallo"
+date: "2023-11-08"
+output: pdf_document
+---
+
+```{r}
+#1 . Using the for loop, create an R script that will display a 5x5 matrix as shown in Figure 1. It must contain vectorA = [1,2,3,4,5] and a 5 x 5 zero matrix.
+vectorA <- c(1,2,3,4,5)
+matrixa <- matrix(vectorA, nrow = 5,ncol = 5)
+
+vectora <-c(0)
+matrixA <- matrix(0, nrow =5,ncol =5)
+
+for (i in length(vectorA)) {
+  matrixA[i, ] <- abs(vectorA-vectorA[i])
+}
+print(matrixA)
+
+```
+```{r}
+#2 Print the string "*" using for() function. The output should be the same as shown in Figur
+
+for(i in 1:5 ){
+  newstar <- rep("*",i)
+  print(newstar)
+}
+
+```
+```{r}
+#3 Get an input from the user to print the Fibonacci sequence starting from the 1st input up to 500. Use repeat and break statements. Write the R Scripts and its output.
+
+seqnum<- as.numeric(readline("Enter the starting number for the Fibonacci sequence: "))
+
+a <- 0
+b <- 1
+
+
+cat("Fibonacci sequence starting from", seqnum, "up to 500:\n")
+
+repeat {
+  if (a >= seqnum) {
+    cat(a, " ")
+  }
+  if (a ==377) {
+    break
+  }
+  tempnum <- a + b
+  a <- b
+  b <- tempnum
+}
+
+cat("\n")
+
+
+
+
+```
+```{r}
+
+#4Import the dataset as shown in Figure 1 you have created previously
+
+
+#1a. What is the R script for importing an excel or a csv file? Display the first 6 rows ofthe dataset? Show your codes and its result
+
+ShoeSdata <- read.csv("Shoe_Sizes")
+
+
+```
