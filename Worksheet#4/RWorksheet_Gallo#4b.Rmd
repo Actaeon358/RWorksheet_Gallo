@@ -31,30 +31,31 @@ for(i in 1:5 ){
 ```{r}
 #3 Get an input from the user to print the Fibonacci sequence starting from the 1st input up to 500. Use repeat and break statements. Write the R Scripts and its output.
 
-seqnum<- as.numeric(readline("Enter the starting number for the Fibonacci sequence: "))
+yournum <- as.integer(readline("Enter the starting Fibonacci sequence number: "))
 
-a <- 0
-b <- 1
+if(is.na(yournum || yournum < 0)) {
+  cat("Enter something else")
+} else {
+  
+inputnum <- yournum
+a <- inputnum
+b <- 0
 
 
-cat("Fibonacci sequence starting from", seqnum, "up to 500:\n")
+cat("Fibonacci sequence starting from", inputnum, ":\n")
 
 repeat {
-  if (a >= seqnum) {
-    cat(a, " ")
-  }
-  if (a ==377) {
+  num <- a + b
+  if (num > 500){
     break
   }
-  tempnum <- a + b
+  cat(num, " ")
   a <- b
-  b <- tempnum
+  b <- num
 }
 
 cat("\n")
-
-
-
+}
 
 ```
 ```{r}
@@ -242,40 +243,47 @@ alexaplot <- barplot(var_TOTAL$n,
                      las = 2)
 
 png("alexaplot.png")
+dev.off()
 
 
+knitr::include_graphics("/cloud/project/Worksheet#4/alexaplot.png")
 
 ```
 
 ```{r}
 #7d.  Create a barplot() for the black and white variations. Plot it in 1 frame, side byside. Complete the details of the char
-blackvariation <- var_TOTAL[var_TOTAL$`alexa$variation`%in%c("Black", "BlackPlus" , "BlackShow" ,"BlackSpot" , "BlackDot"),]
-
-whitevariation <- var_TOTAL[var_TOTAL$`alexa$variation`%in%c("White", "WhiteDot", "WhitePlus", "WhiteShow", "WhiteSpot"),]
+library(RColorBrewer)
 
 par(mfrow = c(1,2))
 
-blackvariation
-blackvarplot <- barplot(height = blackvariation$n,
-                        names.arg = blackvariation$`alexa$variation`,
-                        col = c("black"),
-                        xlab = "Variation",
-                        ylab = "Count",
-                        border = "black",
-                        space = 0.5,
-                        cex.names = 0.4)
 
-
-whitevarplot <- barplot(height = whitevariation$n,
-                        names.arg = whitevariation$`alexa$variation`,
-                        col = "white",
-                        xlab = "Variation",
-                        ylab = "Count",
-                        border = "black",
+blackvarplot <- barplot(height = c(261,270,265,241,516), 
+                        names.arg = c("Black","BlackPlus","BlackShow","BlackSpot","BlackDot"), main = "Black Variations",
+                        col = 1:5,
                         space = 0.5,
-                        cex.names = 0.4)
+                        xlab = "Variation",
+                        ylab = "Count")
+
 png("blackvarplot.png")
-png("whitevarplot.png")
+dev.off()
+getwd()
 
+knitr::include_graphics("/cloud/project/Worksheet#4/blackvarplot.png")
+
+
+whitevarplot <- barplot(height = c(91,184,78,85,109), 
+                        names.arg = c("White", "WhiteDot", "WhitePlus", "WhiteShow", "WhiteSpot"),
+                        main = "White Variations",
+                        space = 0.5,
+                        col = 6:10,
+                        xlab = "Variation",
+                        ylab = "Count",)
+
+
+
+png("whitevarplot.png")
+dev.off()
+
+knitr::include_graphics("/cloud/project/Worksheet#4/whitevarplot.png")
 
 ```
