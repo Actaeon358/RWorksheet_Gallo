@@ -1,0 +1,40 @@
+---
+title: "RWorksheet_Gallo#4c"
+author: "Alfe Kevin P. Gallo"
+date: "2023-11-22"
+output: pdf_document
+---
+1.
+```{r}
+
+library(ggplot2)
+
+head(mpg)
+  
+summary(mpg)
+
+
+
+```
+
+1a.
+```{r}
+# Show your solutions on how to import a csv file into the environment.
+
+mpgdata <- read.csv("mpg.csv")
+
+
+```
+1b. 
+```{r}
+# Which variables from mpg dataset are categorical?
+str(mpg)
+
+```
+1c.
+```{r}
+# Which are continuous variables?
+
+
+
+```
